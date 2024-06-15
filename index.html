@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" href="./images/logoWeather.png">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"></div>
+        <div class="search">
+            <input type="text" list="citiesList" placeholder="Search Location..." onkeydown="callWeatherApiByEnter(event)">
+            <datalist id="citiesList">
+            </datalist>
+
+            <button onclick="callWeatherApiByButton()"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+        </div>
+
+
+    </header>
+
+    <div class="content">
+        <div class="leftContent">
+            <div class="currentTemp">
+                <h1>--°C</h1>
+            </div>
+            <div class="placeAndFontAwesome">
+                <div class="placeDateTime">
+                    <h1>------</h1>
+                    <p>_____________</p>
+                </div>
+                <div class="weatherFontAwesome">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rightContent">
+            <h1>Weather Details...</h1>
+            <div class="otherWeatherDetails">
+                <h3>--</h3>
+
+
+                <div class="rightContentItem">
+                    <p>Temp in Fahrenheit</p>
+                    <div class="rightContentItemValue">
+                        <p class="tempInF">__°F</p>
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                </div>
+                <div class="rightContentItem">
+                    <p>Wind</p>
+
+                    <div class="rightContentItemValue">
+                        <p class="windKmph">__Km/h</p>
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                </div>
+                <div class="rightContentItem">
+                    <p>Clody</p>
+
+                    <div class="rightContentItemValue">
+                        <p class="cloudy">__%</p>
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                </div>
+                <div class="rightContentItem">
+                    <p>Humadity</p>
+
+                    <div class="rightContentItemValue">
+                        <p class="humadity">__%</p>
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                </div>
+
+                <div class="rightContentItem">
+                    <p>Air-Quality Index</p>
+
+                    <div class="rightContentItemValue">
+                        <p class="airQuality">--</p>
+                        <i class="fa-brands fa-airbnb"></i>
+                    </div>
+                </div>
+
+                <div class="rightContentItem">
+                    <p>Local-Time</p>
+
+                    <div class="rightContentItemValue">
+                        <p class="localTime">________</p>
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./JS/cities.js"></script>
+    <script src="./JS/time.js"></script>
+    <script src="./JS/weatherFind.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

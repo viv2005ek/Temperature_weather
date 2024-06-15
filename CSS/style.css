@@ -1,0 +1,262 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+body {
+    width: 100%;
+    background-image: url(../images/background-laptop.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #213a47;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #052526;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    align-items: center;
+}
+
+header .logo {
+    height: 50px;
+    width: 90px;
+    background-image: url(../images/logoWeather.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 10vw;
+}
+
+header .search {
+    border-bottom: 1px solid white;
+    position: relative;
+    right: 10vw;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+header .search input {
+    font-size: 20px;
+    height: 47px;
+    background-color: transparent;
+    border-width: 0;
+    outline: none;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 70%;
+}
+
+header .search button {
+    font-size: 28px;
+    background-color: transparent;
+    border-width: 0;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    align-items: center;
+}
+
+.content .leftContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content .leftContent .currentTemp h1 {
+    font-size: 80px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.content .leftContent .placeAndFontAwesome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .leftContent .placeAndFontAwesome .placeDateTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .leftContent .placeAndFontAwesome .placeDateTime h1 {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.content .leftContent .placeAndFontAwesome .placeDateTime p {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.content .leftContent .placeAndFontAwesome .weatherFontAwesome {
+    font-size: 60px;
+}
+
+.content .rightContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: sans-serif;
+    width: 70%;
+    min-width: 800px;
+    margin-top: 10vh;
+}
+
+.content .rightContent h1 {
+    font-size: 30px;
+    font-weight: 400;
+    z-index: 2;
+}
+
+.content .rightContent .otherWeatherDetails {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    background: rgba( 0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 50px 13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 50px 13px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 50px 13px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur( 5px);
+    -webkit-backdrop-filter: blur( 5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+}
+
+.content .rightContent .otherWeatherDetails .rightContentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.content .rightContent .otherWeatherDetails .rightContentItem p {
+    color: white;
+    opacity: 70%;
+}
+
+.content .rightContent .otherWeatherDetails .rightContentItem .rightContentItemValue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.content .rightContent .otherWeatherDetails .rightContentItem .rightContentItemValue p {
+    color: white;
+    opacity: 100%;
+}
+
+@media (max-width:1023px) {
+    body {
+        background-image: url(../images/background-tab.png);
+    }
+    header .search {
+        position: relative;
+        right: 5vw;
+        display: flex;
+        gap: 20px;
+    }
+    header .logo {
+        position: relative;
+        left: 5vw;
+    }
+    .content .rightContent {
+        width: 80%;
+        min-width: 680px;
+    }
+}
+
+@media (max-width:767px) {
+    body {
+        background-image: url(../images/background-mobile.png);
+    }
+    .content .rightContent {
+        width: 90%;
+        min-width: 0;
+    }
+}
+
+@media (max-width:500px) {
+    header .search {
+        position: relative;
+        right: 10px;
+        display: flex;
+        gap: 5px;
+    }
+    header .logo {
+        position: relative;
+        left: 10px;
+    }
+}
+
+@media (max-width:450px) {
+    .content .leftContent .currentTemp h1 {
+        width: 100vw;
+        text-align: center;
+    }
+    .content .rightContent .otherWeatherDetails .rightContentItem .rightContentItemValue {
+        gap: 10px
+    }
+}
+
+@media (max-width:400px) {
+    header {
+        flex-wrap: wrap;
+    }
+    header .search {
+        width: 80%;
+        position: relative;
+        right: 0;
+        left: 5vw;
+        gap: 5%;
+        margin-top: 20px;
+    }
+    header .search input {
+        width: 65vw;
+    }
+    .content .rightContent {
+        width: 95%;
+    }
+}
