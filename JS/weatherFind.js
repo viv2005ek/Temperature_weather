@@ -98,7 +98,7 @@ async function weatherAPI(city) {
         tempInFInHtml.innerHTML = `${data_Weather.current.temp_f}°F`;
         windKmphInHtml.innerHTML = `${data_Weather.current.wind_kph}Km/h`;
         cloudyInHtml.innerHTML = `${data_Weather.current.cloud}%`;
-        humadityInHtml.innerHTML = `${data_Weather.current.cloud}%`;
+        humadityInHtml.innerHTML = `${data_Weather.current.humidity}%`;
         airQualityInHtml.innerHTML = `${data_Weather.current.air_quality["us-epa-index"]}`;
         localTimeInHtml.innerHTML = `${data_Weather.location.localtime}`;
     }
