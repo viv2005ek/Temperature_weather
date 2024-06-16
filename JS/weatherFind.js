@@ -1,15 +1,21 @@
-if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let long = position.coords.longitude;
-        console.log(lat, long);
+function live_location() {
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+            console.log(lat, long);
 
-        const URL_Location = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=0d7e0434effa4ea3825e16245d95ba24`;
+            const URL_Location = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=0d7e0434effa4ea3825e16245d95ba24`;
 
-        console.log("Location:-" + URL_Location);
-        getLoc(URL_Location);
-    });
-}
+            console.log("Location:-" + URL_Location);
+            getLoc(URL_Location);
+        });
+    }
+};
+live_location();
+
+
+
 
 
 let city;
@@ -106,6 +112,10 @@ async function weatherAPI(city) {
 };
 
 function callWeatherApiByButton() {
+    if (searchCityInHtml.value == "Current Location") {
+        live_location();
+        return;
+    }
     cityNameToSearch = searchCityInHtml.value;
     cityIndiaCheckVar = 0;
     checkCity(cityNameToSearch)
