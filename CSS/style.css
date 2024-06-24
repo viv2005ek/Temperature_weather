@@ -89,6 +89,7 @@ header .search button {
     margin-top: 10vh;
     margin-bottom: 10vh;
     align-items: center;
+    cursor:default;
 }
 
 .content .leftContent {
